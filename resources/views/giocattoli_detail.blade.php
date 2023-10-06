@@ -38,40 +38,16 @@
   </div>
 </nav>
   <!-- Fine  Navbar! -->
-  {{-- !inizio header  --}}
-  <div id="carouselExampleSlidesOnly" class="carousel slide carousel-wrap" data-bs-ride="carousel">
-    <div class="carousel-inner carousel-wrap">
-      <div class="carousel-item active">
-        <img src="/images/gioco1.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="/images/gioco2.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="/images/gioco3.jpg" class="d-block w-100" alt="...">
-      </div>
-    </div>
-  </div>
-  {{-- !fine header  --}}
-    <h1 class="text-center display-5 color-text">SCOPRI I NOSTRI ANNUNCI </h1>
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            @foreach ($articoli as $articolo)
-                <div class="col-3">
-                <div class="card" style="width: 18rem;">
-                    <img src="{{$articolo['img']}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">{{$articolo['name']}}</h5>
-                      <p class="card-text">{{$articolo['description']}}</p>
-                      <h5 class="card-title">{{$articolo['price']}}</h5>
-                      <p class="card-text"><small class="text-body-secondary">{{$articolo['seller']}}</small></p>
-                      <a href="{{route('giocattoli_detail', ['article'=> $articolo['name']])}}" class="btn btn-primary">Visualizza dettagli</a>
-                    </div>
-                </div> 
-            </div>
-            @endforeach
+ 
+   <div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h1>{{$annunci['name']}}</h1>
+            {{-- <p>{{$annunci['description']}}</p> --}}
         </div>
+        <div class="col-6"></div>
     </div>
+   </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>

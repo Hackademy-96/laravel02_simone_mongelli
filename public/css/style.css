@@ -1,0 +1,16 @@
+.nav-color{
+    background-color: darkcyan;
+    height: 7vh;
+}
+
+.white{
+    color: white !important;
+}
+
+.carousel-wrap{
+    height: 50vh;
+    object-fit: cover;
+}
+.color-text{
+    color: darkcyan ;
+}
