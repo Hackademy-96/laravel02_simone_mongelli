@@ -11,9 +11,9 @@
   <body>
 
   <!-- Inizio Navbar! -->
-  <nav class="navbar navbar-expand-lg  nav-color ">
+  <nav class="navbar navbar-expand-lg  nav-color  fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand white" href="#">SpazioLove</a>
+    <a class="navbar-brand white" href="#">&copy;SpazioLove</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -53,16 +53,17 @@
     </div>
   </div>
   {{-- !fine header  --}}
-    <h1 class="text-center display-5 color-text">SCOPRI I NOSTRI ANNUNCI </h1>
+    <h1 class="text-center display-5 color-text border-bottom pb-2 mt-2">SCOPRI I NOSTRI ANNUNCI </h1>
     <div class="container-fluid">
         <div class="row justify-content-center">
             @foreach ($articoli as $articolo)
                 <div class="col-3">
-                <div class="card" style="width: 18rem;">
+                <div class="card mt-4" style="width: 18rem;">
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">NEW</span>
                     <img src="{{$articolo['img']}}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">{{$articolo['name']}}</h5>
-                      <p class="card-text">{{$articolo['description']}}</p>
+                      <p class="card-text">{{substr($articolo['description'],0,25)}} ...</p>
                       <h5 class="card-title">{{$articolo['price']}}</h5>
                       <p class="card-text"><small class="text-body-secondary">{{$articolo['seller']}}</small></p>
                       <a href="{{route('giocattoli_detail', ['article'=> $articolo['name']])}}" class="btn btn-primary">Visualizza dettagli</a>
@@ -72,6 +73,50 @@
             @endforeach
         </div>
     </div>
+    {{-- !inizio footer  --}}
+    <div class="container-fluid">
+      <footer class="py-5 ">
+        <div class="row justify-content-evenly">
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+          </div>
+    
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+          </div>
+          <div class="col-md-5 offset-md-1 ms-auto">
+            <form>
+              <h5>Subscribe to our newsletter</h5>
+              
+              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                <label for="newsletter1" class="visually-hidden">Email address</label>
+                <input id="newsletter1" type="text" class="form-control" placeholder="Inserisci la tua mail ">
+                <button class="btn btn-primary" type="button">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    
+        <div class="d-flex justify-content-center border-top">
+          <p>&copy; 2022 Company, Inc. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+    {{-- !fine footer  --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>

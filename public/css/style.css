@@ -8,9 +8,14 @@
 }
 
 .carousel-wrap{
-    height: 50vh;
+    height: 60vh;
     object-fit: cover;
+    margin-top: 7vh;
 }
 .color-text{
     color: darkcyan ;
+}
+.wrap-image{
+    height: 50vh;
+    width: 35vw;
 }

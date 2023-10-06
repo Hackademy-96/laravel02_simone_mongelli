@@ -12,17 +12,17 @@ class GiocattoliDetailController extends Controller
         
         $annunci = [
             [   
-            "img"=> '/images/pistola.jpg',
-            "name"=> "Pistola",
-            "description"=> "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos minus quod, inventore ipsam quis quaerat beatae nihil facilis aliquam maiores omnis iure fuga quas impedit adipisci eligendi consectetur eaque? Laudantium.",
-            "price"=>"12euro",
-            "seller"=>"Massimogiocattoli"
+                "img"=> '/images/pistola.jpg',
+                "name"=> "Pistola",
+                "description"=> "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos minus quod, inventore ipsam quis quaerat beatae nihil facilis aliquam maiores omnis iure fuga quas impedit adipisci eligendi consectetur eaque? Laudantium.",
+                "price"=>"12euro",
+                "seller"=>"Massimogiocattoli"
             
         ],
         [
-            "img"=> '/images/barchetta.jpg',
-            "name"=> "Barchetta",
-            "description"=> "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos minus quod, inventore ipsam quis quaerat beatae nihil facilis aliquam maiores omnis iure fuga quas impedit adipisci eligendi consectetur eaque? Laudantium.",
+                "img"=> '/images/barchetta.jpg',
+                "name"=> "Barchetta",
+                "description"=> "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos minus quod, inventore ipsam quis quaerat beatae nihil facilis aliquam maiores omnis iure fuga quas impedit adipisci eligendi consectetur eaque? Laudantium.",
                 "price"=>"27euro",
                 "seller"=>"Massimogiocattoli"
                 
@@ -38,7 +38,7 @@ class GiocattoliDetailController extends Controller
             ];
             foreach($annunci as $annuncio){
                 if($annuncio['name'] == $article )
-                return view ('giocattoli_detail',['articoli'=>$annunci]);
+                return view ('giocattoli_detail',['annuncio'=>$annuncio]);
             }
         }
     }
